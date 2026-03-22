@@ -1,0 +1,172 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'>
+
+<style>
+  body { font-family: Arial, sans-serif; color: #333; }
+  h2 { color: #0063B1; }
+  .summary { background: #f4f4f4; padding: 12px 16px; border-radius: 6px; margin-bottom: 20px; }
+  .all-clear { background: #d4edda; color: #155724; padding: 14px 16px; border-radius: 6px;
+               font-size: 1.1em; font-weight: bold; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9em; }
+  th { background: #0063B1; color: #fff; padding: 8px 10px; text-align: left; }
+  td { padding: 7px 10px; border-bottom: 1px solid #ddd; vertical-align: top; }
+  tr:nth-child(even) td { background: #f9f9f9; }
+  .state-faulted { color: #dc3545; font-weight: bold; }
+  .state-failed  { color: #c82333; font-weight: bold; }
+  .logs { font-family: monospace; font-size: 0.82em; color: #555;
+          white-space: pre-wrap; word-break: break-all; }
+</style>
+
+</head><body>
+<h2>UiPath Automation Health Report</h2>
+<p>Tenant: <strong>chopmozccyw / DefaultTenant</strong> &nbsp;|&nbsp; Generated: 2026-03-06 23:04 UTC &nbsp;|&nbsp; Window: last 24h</p>
+<div class='summary'>
+<strong>Total jobs:</strong> 91 &nbsp;&nbsp; <strong>Successful:</strong> 84 &nbsp;&nbsp; <strong>Faulted/Failed:</strong> 7 &nbsp;&nbsp; <strong>Success rate:</strong> <span style='color:#ffc107'>92.3%</span>
+</div>
+<h3>Faulted / Failed Jobs</h3>
+<table>
+<tr><th>Process</th><th>Folder</th><th>Robot / Machine</th><th>Start</th><th>End</th><th>State</th><th>Error</th><th>Exception Logs</th></tr>
+<tr><td>CHOP_EligibilityDenials</td><td>Shared/CHOP_EligibilityDenials</td><td>UIPAPPDW03</td><td>2026-03-06 09:40 UTC</td><td>2026-03-06 10:01 UTC</td><td class='state-stopped'>Stopped</td><td>Job canceled</td><td><div class='logs'>[2026-03-06T09:55:54.4517858Z] 'Get Text 'Insurance ID'' activity recovery failed. No available license / Agentic units to perform healing analysis and recovery.
+[2026-03-06T09:53:34.1974574Z] Business rule exception.BE-009: Payer portal unavailable/blocked (maintenance, CAPTCHA/2FA, access error).
+[2026-03-06 09:53 UTC] DeterminePayorPortal_LookupExtractPolicies - Invoke Workflow File (DeterminePayorPortal_LookupExtractPolicies.xaml): BE-009: Payer portal unavailable/blocked (maintenance, CAPTCHA/2FA, access error).
+in Framework\Process.xaml
+    at InvokeWorkflowFile "DeterminePayorPortal_LookupExtractPolicies - Invoke Workflow File (DeterminePayorPortal_LookupExtractPolicies.xaml)"
+    at Sequence "Process"
+    at Process "Process"
+
+[2026-03-06T09:53:33.8226003Z] 00.2_NaviNet_Login - Invoke Workflow File (CHOP_AppActivities\Payor_Portals\Navinet\00.2_NaviNet_Login.xaml): BE-009: Payer portal unavailable/blocked (maintenance, CAPTCHA/2FA, access error).
+in CHOP_AppActivities\DeterminePayorPortal_LookupExtractPolicies.xaml
+    at InvokeWorkflowFile "00.2_NaviNet_Login - Invoke Workflow File (CHOP_AppActivities\Payor_Portals\Navinet\00.2_NaviNet_Login.xaml)"
+    at Sequence "Navinet Lookup"
+    at Flowchart "Payor Portal: Determine Payor, Lookup & Extract Policies"
+    at Sequence "Sequence"
+    at DeterminePayorPortal_LookupExtractPolicies "DeterminePayorPortal_LookupExtractPolicies"
+
+[2026-03-06T09:53:33.8217808Z] Throw BE - UHC Homepage does not appear: BE-009: Payer portal unavailable/blocked (maintenance, CAPTCHA/2FA, access error).
+in CHOP_AppActivities\Payor_Portals\Navinet\00.2_NaviNet_Login.xaml
+    at Throw "Throw BE - UHC Homepage does not appear"
+    at Sequence "Target does not appear"
+    at Sequence "Body"
+    at TryCatch "Try Catch"
+    at Sequence "Target does not appear"
+    at NCheckState "Check App State - Workflows"
+    at Sequence "UHC - Login"
+    at NApplicationCard "Use Browser Edge: Resources and tools for providers and health care professionals | NaviNet"
+    at Sequence "_00_2_NaviNet_Login"
+    at _00_2_NaviNet_Login "00.2_NaviNet_Login"</div></td></tr>
+<tr><td>CHOP_EligibilityDenials</td><td>Shared/CHOP_EligibilityDenials</td><td>UIPAPPDW03</td><td>2026-03-06 09:00 UTC</td><td>2026-03-06T09:21:16.8Z</td><td class='state-stopped'>Stopped</td><td>Job canceled</td><td><div class='logs'>[2026-03-06T09:16:21.4985594Z] 'Get Text 'Insurance ID'' activity recovery failed. No available license / Agentic units to perform healing analysis and recovery.
+[2026-03-06T09:14:03.1187792Z] '' activity recovery failed. No available license / Agentic units to perform healing analysis and recovery.
+[2026-03-06T09:13:57.4726736Z] Business rule exception.BE-023: Claim Image coverage does not match existing coverage.
+[2026-03-06T09:13:57.1266406Z] Epic_VerifyRegistration - Invoke Workflow File (CHOP_AppActivities\EPIC\Epic_VerifyRegistration.xaml): BE-023: Claim Image coverage does not match existing coverage.
+in Framework\Process.xaml
+    at InvokeWorkflowFile "Epic_VerifyRegistration - Invoke Workflow File (CHOP_AppActivities\EPIC\Epic_VerifyRegistration.xaml)"
+    at Sequence "Epic: Verify Registration, Duplicates, Linkages & Statuses"
+    at Sequence "Process"
+    at Process "Process"
+
+[2026-03-06T09:13:57.1260918Z] Throw BE-023: BE-023: Claim Image coverage does not match existing coverage.
+in CHOP_AppActivities\EPIC\Epic_VerifyRegistration.xaml
+    at Throw "Throw BE-023"
+    at Sequence "BE Path"
+    at Sequence "Then"
+    at If "If Claim Cvg DNE, add"
+    at Sequence "Do"
+    at NApplicationCard "HB BUSINESS OFFI(1)"
+    at Sequence "Epic_VerifyRegistration"
+    at Epic_VerifyRegistration "Epic_VerifyRegistration"</div></td></tr>
+<tr><td>CHOP_EligibilityDenials</td><td>Shared/CHOP_EligibilityDenials</td><td>UIPAPPDW03</td><td>2026-03-06 07:20 UTC</td><td>2026-03-06 07:41 UTC</td><td class='state-stopped'>Stopped</td><td>Job canceled</td><td><div class='logs'>[2026-03-06T07:35:27.5425057Z] 'Get Text 'Insurance ID'' activity recovery failed. No available license / Agentic units to perform healing analysis and recovery.
+[2026-03-06T07:33:19.4357439Z] Business rule exception.BE-001: Patient not found in payer portal
+[2026-03-06T07:33:19.0318504Z] DeterminePayorPortal_LookupExtractPolicies - Invoke Workflow File (DeterminePayorPortal_LookupExtractPolicies.xaml): BE-001: Patient not found in payer portal
+in Framework\Process.xaml
+    at InvokeWorkflowFile "DeterminePayorPortal_LookupExtractPolicies - Invoke Workflow File (DeterminePayorPortal_LookupExtractPolicies.xaml)"
+    at Sequence "Process"
+    at Process "Process"
+
+[2026-03-06T07:33:19.0311201Z] Throw BE-001: BE-001: Patient not found in payer portal
+in CHOP_AppActivities\DeterminePayorPortal_LookupExtractPolicies.xaml
+    at Throw "Throw BE-001"
+    at Sequence "Then"
+    at If "If BE-001"
+    at Sequence "Payor Portal BEs"
+    at Flowchart "Payor Portal: Determine Payor, Lookup & Extract Policies"
+    at Sequence "Sequence"
+    at DeterminePayorPortal_LookupExtractPolicies "DeterminePayorPortal_LookupExtractPolicies"
+
+[2026-03-06T07:31:55.8339192Z] 'Get Text 'Insurance ID'' activity recovery failed. No available license / Agentic units to perform healing analysis and recovery.</div></td></tr>
+<tr><td>CHOP_EligibilityDenials</td><td>Shared/CHOP_EligibilityDenials</td><td>UIPAPPDW03</td><td>2026-03-06 06:20 UTC</td><td>2026-03-06 06:41 UTC</td><td class='state-stopped'>Stopped</td><td>Job canceled</td><td><div class='logs'>[2026-03-06T06:34:39.4287377Z] '' activity recovery failed. No available license / Agentic units to perform healing analysis and recovery.
+[2026-03-06T06:34:33.4214938Z] Business rule exception.BE-023: Claim Image coverage does not match existing coverage.
+[2026-03-06 06:34 UTC] Epic_VerifyRegistration - Invoke Workflow File (CHOP_AppActivities\EPIC\Epic_VerifyRegistration.xaml): BE-023: Claim Image coverage does not match existing coverage.
+in Framework\Process.xaml
+    at InvokeWorkflowFile "Epic_VerifyRegistration - Invoke Workflow File (CHOP_AppActivities\EPIC\Epic_VerifyRegistration.xaml)"
+    at Sequence "Epic: Verify Registration, Duplicates, Linkages & Statuses"
+    at Sequence "Process"
+    at Process "Process"
+
+[2026-03-06T06:34:33.0544356Z] Throw BE-023: BE-023: Claim Image coverage does not match existing coverage.
+in CHOP_AppActivities\EPIC\Epic_VerifyRegistration.xaml
+    at Throw "Throw BE-023"
+    at Sequence "BE Path"
+    at Sequence "Then"
+    at If "If Claim Cvg DNE, add"
+    at Sequence "Do"
+    at NApplicationCard "HB BUSINESS OFFI(1)"
+    at Sequence "Epic_VerifyRegistration"
+    at Epic_VerifyRegistration "Epic_VerifyRegistration"
+
+[2026-03-06T06:32:06.9127423Z] Business rule exception.BE-009: Payer portal unavailable/blocked (maintenance, CAPTCHA/2FA, access error).</div></td></tr>
+<tr><td>CHOP_EligibilityDenials</td><td>Shared/CHOP_EligibilityDenials</td><td>UIPAPPDW03</td><td>2026-03-06T03:20:16.52Z</td><td>2026-03-06T03:41:16.68Z</td><td class='state-stopped'>Stopped</td><td>Job canceled</td><td><div class='logs'>[2026-03-06T03:35:07.2654245Z] Business rule exception.BE-022: Patient not found in payor portal & letter not available in MyCHOP
+[2026-03-06T03:35:06.8625619Z] DeterminePayorPortal_LookupExtractPolicies - Invoke Workflow File (DeterminePayorPortal_LookupExtractPolicies.xaml): BE-022: Patient not found in payor portal & letter not available in MyCHOP
+in Framework\Process.xaml
+    at InvokeWorkflowFile "DeterminePayorPortal_LookupExtractPolicies - Invoke Workflow File (DeterminePayorPortal_LookupExtractPolicies.xaml)"
+    at Sequence "Process"
+    at Process "Process"
+
+[2026-03-06T03:35:06.8623535Z] Epic_CHOPPA_SendLetterAndDefer - Invoke Workflow File (CHOP_AppActivities\EPIC\Epic_CHOPPA_SendLetterAndDefer.xaml): BE-022: Patient not found in payor portal & letter not available in MyCHOP
+in CHOP_AppActivities\DeterminePayorPortal_LookupExtractPolicies.xaml
+    at InvokeWorkflowFile "Epic_CHOPPA_SendLetterAndDefer - Invoke Workflow File (CHOP_AppActivities\EPIC\Epic_CHOPPA_SendLetterAndDefer.xaml)"
+    at Sequence "Then"
+    at If "If CHOPPA"
+    at Sequence "Then"
+    at If "If BE-001"
+    at Sequence "Payor Portal BEs"
+    at Flowchart "Payor Portal: Determine Payor, Lookup & Extract Policies"
+    at Sequence "Sequence"
+    at DeterminePayorPortal_LookupExtractPolicies "DeterminePayorPortal_LookupExtractPolicies"
+
+[2026-03-06T03:35:06.8618782Z] Throw BE-022: BE-022: Patient not found in payor portal & letter not available in MyCHOP
+in CHOP_AppActivities\EPIC\Epic_CHOPPA_SendLetterAndDefer.xaml
+    at Throw "Throw BE-022"
+    at Sequence "BE Path"
+    at Sequence "Then"
+    at If "If Not MyChop"
+    at Sequence "Do"
+    at NApplicationCard "HB BUSINESS OFFICE"
+    at Sequence "Epic_ResubmitClaim"
+    at Epic_CHOPPA_SendLetterAndDefer "Epic_CHOPPA_SendLetterAndDefer"
+
+[2026-03-06T03:33:15.7367696Z] 'Get Text 'Insurance ID'' activity recovery failed. No available license / Agentic units to perform healing analysis and recovery.</div></td></tr>
+<tr><td>CHOP_EligibilityDenials</td><td>Shared/CHOP_EligibilityDenials</td><td>UIPAPPDW03</td><td>2026-03-06 02:20 UTC</td><td>2026-03-06T02:41:16.74Z</td><td class='state-stopped'>Stopped</td><td>Job canceled</td><td><div class='logs'>[2026-03-06T02:35:29.8679745Z] 'Get Text 'Insurance ID'' activity recovery failed. No available license / Agentic units to perform healing analysis and recovery.
+[2026-03-06T02:33:42.7939376Z] '' activity recovery failed. No available license / Agentic units to perform healing analysis and recovery.
+[2026-03-06T02:33:37.5430033Z] '' activity recovery failed. No available license / Agentic units to perform healing analysis and recovery.
+[2026-03-06T02:33:06.9887245Z] '' activity recovery failed. No available license / Agentic units to perform healing analysis and recovery.
+[2026-03-06T02:33:01.1399136Z] System exception.Multiple similar matches found.
+
+Could not uniquely identify the user-interface element for this action.
+Edit the element, run Validation, and add anchors in order to ensure the element is uniquely identified. at Source: Epic_ExtractClaimImage - Invoke Workflow File (CHOP_AppActivities\EPIC\Epic_ExtractClaimImage.xaml): Get Text 'DATES OF SERVICE'</div></td></tr>
+<tr><td>CHOP_EligibilityDenials</td><td>Shared/CHOP_EligibilityDenials</td><td>UIPAPPDW03</td><td>2026-03-06 00:40 UTC</td><td>2026-03-06 01:01 UTC</td><td class='state-stopped'>Stopped</td><td>Job canceled</td><td><div class='logs'>[2026-03-06T00:56:48.2373177Z] 'Get Text 'Insurance ID'' activity recovery failed. No available license / Agentic units to perform healing analysis and recovery.
+[2026-03-06T00:54:58.6854524Z] '' activity recovery failed. No available license / Agentic units to perform healing analysis and recovery.
+[2026-03-06T00:54:52.7429418Z] Business rule exception.BE-021: E-verification failed
+[2026-03-06T00:54:52.3418011Z] DataComparison_EpicVsPayorPortal - Invoke Workflow File (DataComparison_EpicVsPayorPortal.xaml): BE-021: E-verification failed
+in Framework\Process.xaml
+    at InvokeWorkflowFile "DataComparison_EpicVsPayorPortal - Invoke Workflow File (DataComparison_EpicVsPayorPortal.xaml)"
+    at Sequence "Process"
+    at Process "Process"
+
+[2026-03-06T00:54:52.3413281Z] Epic_ReVerifyRegistration - Invoke Workflow File (CHOP_AppActivities\EPIC\Epic_ReVerifyRegistration.xaml): BE-021: E-verification failed
+in CHOP_AppActivities\DataComparison_EpicVsPayorPortal.xaml
+    at InvokeWorkflowFile "Epic_ReVerifyRegistration - Invoke Workflow File (CHOP_AppActivities\EPIC\Epic_ReVerifyRegistration.xaml)"
+    at Sequence "CHOPPA Active"
+    at Flowchart "Data Comparison: Epic vs. Payor Portal"
+    at Sequence "Sequence"
+    at DataComparison_EpicVsPayorPortal "DataComparison_EpicVsPayorPortal"</div></td></tr>
+</table>
+</body></html>

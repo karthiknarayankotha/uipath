@@ -1,0 +1,656 @@
+2026-03-06 17:24:02,777 [INFO] __main__ — Starting UiPath health check
+2026-03-06 17:24:03,138 [ERROR] __main__ — Fatal error: Authentication failed (403): {"error":"unauthorized_client","error_description":"Grant type 'password' not allowed for the client.","error_uri":"https://auth0.com/docs/clients/client-grant-types"}
+If MFA is enabled on your account, use Client ID + Secret instead. See README.md for instructions.
+Traceback (most recent call last):
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 77, in <module>
+    main()
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 37, in main
+    token = authenticate(cfg)
+  File "/Users/karthik/git_p/uipath/uipath_monitor/auth.py", line 30, in authenticate
+    raise RuntimeError(
+RuntimeError: Authentication failed (403): {"error":"unauthorized_client","error_description":"Grant type 'password' not allowed for the client.","error_uri":"https://auth0.com/docs/clients/client-grant-types"}
+If MFA is enabled on your account, use Client ID + Secret instead. See README.md for instructions.
+2026-03-06 17:31:42,849 [ERROR] __main__ — Fatal error: No module named 'dotenv'
+Traceback (most recent call last):
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 77, in <module>
+    main()
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 29, in main
+    from config import load_config
+  File "/Users/karthik/git_p/uipath/uipath_monitor/config.py", line 3, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+2026-03-06 17:32:18,587 [INFO] __main__ — Starting UiPath health check
+2026-03-06 17:32:18,861 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 17:32:19,096 [ERROR] __main__ — Fatal error: 400 Client Error: Bad Request for url: https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs?%24filter=%28State+eq+%27Faulted%27+or+State+eq+%27Failed%27%29+and+EndTime+ge+2026-03-05T22%3A32%3A18Z&%24select=Id%2CKey%2CProcessName%2CState%2CStartTime%2CEndTime%2CHostMachineName%2CInfo&%24orderby=EndTime+desc&%24top=200
+Traceback (most recent call last):
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 77, in <module>
+    main()
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 50, in main
+    jobs = client.get_failed_jobs(folder)
+  File "/Users/karthik/git_p/uipath/uipath_monitor/api_client.py", line 61, in get_failed_jobs
+    data = self._get(
+  File "/Users/karthik/git_p/uipath/uipath_monitor/api_client.py", line 41, in _get
+    resp.raise_for_status()
+  File "/Users/karthik/git_p/uipath/venv/lib/python3.9/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs?%24filter=%28State+eq+%27Faulted%27+or+State+eq+%27Failed%27%29+and+EndTime+ge+2026-03-05T22%3A32%3A18Z&%24select=Id%2CKey%2CProcessName%2CState%2CStartTime%2CEndTime%2CHostMachineName%2CInfo&%24orderby=EndTime+desc&%24top=200
+2026-03-06 17:32:48,675 [INFO] __main__ — Starting UiPath health check
+2026-03-06 17:32:48,986 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 17:32:49,152 [ERROR] __main__ — Fatal error: API error 400 for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs
+Body: {"message":"Invalid OData query options.","errorCode":1000,"traceId":"00-b95f3222d3ae96e0f661541be1ee65c0-db6eb9cbf628ecc3-00","details":"The string 'Failed' is not a valid enumeration type constant."}
+Traceback (most recent call last):
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 77, in <module>
+    main()
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 50, in main
+    jobs = client.get_failed_jobs(folder)
+  File "/Users/karthik/git_p/uipath/uipath_monitor/api_client.py", line 64, in get_failed_jobs
+    data = self._get(
+  File "/Users/karthik/git_p/uipath/uipath_monitor/api_client.py", line 42, in _get
+    raise RuntimeError(
+RuntimeError: API error 400 for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs
+Body: {"message":"Invalid OData query options.","errorCode":1000,"traceId":"00-b95f3222d3ae96e0f661541be1ee65c0-db6eb9cbf628ecc3-00","details":"The string 'Failed' is not a valid enumeration type constant."}
+2026-03-06 17:33:06,669 [INFO] __main__ — Starting UiPath health check
+2026-03-06 17:33:06,881 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 17:33:07,081 [ERROR] __main__ — Fatal error: API error 400 for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs
+Body: {"message":"Invalid OData query options.","errorCode":1000,"traceId":"00-71221339d5d32b9b91c6e3625f9eb721-00a04973041c90f9-00","details":"Could not find a property named 'ProcessName' on type 'UiPath.Server.Configuration.OData.JobDto'."}
+Traceback (most recent call last):
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 77, in <module>
+    main()
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 50, in main
+    jobs = client.get_failed_jobs(folder)
+  File "/Users/karthik/git_p/uipath/uipath_monitor/api_client.py", line 64, in get_failed_jobs
+    data = self._get(
+  File "/Users/karthik/git_p/uipath/uipath_monitor/api_client.py", line 42, in _get
+    raise RuntimeError(
+RuntimeError: API error 400 for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs
+Body: {"message":"Invalid OData query options.","errorCode":1000,"traceId":"00-71221339d5d32b9b91c6e3625f9eb721-00a04973041c90f9-00","details":"Could not find a property named 'ProcessName' on type 'UiPath.Server.Configuration.OData.JobDto'."}
+2026-03-06 17:34:21,223 [INFO] __main__ — Starting UiPath health check
+2026-03-06 17:34:21,440 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 17:34:21,785 [INFO] __main__ — Folder 'Shared': 0 failed/faulted job(s)
+2026-03-06 17:34:22,156 [INFO] __main__ — Folder 'Shared/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:34:22,509 [INFO] __main__ — Folder 'Shared/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:34:22,874 [ERROR] __main__ — Fatal error: API error 400 for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs
+Body: {"message":"Folder does not exist or the user does not have access to the folder.","errorCode":1100,"traceId":"00-9f8545a4de2ad0150bace2c664914b51-bb6fda61fbb1451f-01"}
+Traceback (most recent call last):
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 77, in <module>
+    main()
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 50, in main
+    jobs = client.get_failed_jobs(folder)
+  File "/Users/karthik/git_p/uipath/uipath_monitor/api_client.py", line 64, in get_failed_jobs
+    data = self._get(
+  File "/Users/karthik/git_p/uipath/uipath_monitor/api_client.py", line 42, in _get
+    raise RuntimeError(
+RuntimeError: API error 400 for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs
+Body: {"message":"Folder does not exist or the user does not have access to the folder.","errorCode":1100,"traceId":"00-9f8545a4de2ad0150bace2c664914b51-bb6fda61fbb1451f-01"}
+2026-03-06 17:34:37,503 [INFO] __main__ — Starting UiPath health check
+2026-03-06 17:34:37,697 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 17:34:37,901 [INFO] __main__ — Folder 'Shared': 0 failed/faulted job(s)
+2026-03-06 17:34:38,252 [INFO] __main__ — Folder 'Shared/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:34:38,621 [INFO] __main__ — Folder 'Shared/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:34:38,927 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:34:38,928 [INFO] __main__ — Folder 'Development': 0 failed/faulted job(s)
+2026-03-06 17:34:39,098 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:34:39,296 [INFO] __main__ — Folder 'Shared/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:34:39,624 [INFO] __main__ — Folder 'UAT': 0 failed/faulted job(s)
+2026-03-06 17:34:40,011 [INFO] __main__ — Folder 'Shared/CHOP_PB_Medical_Record_Update': 0 failed/faulted job(s)
+2026-03-06 17:34:40,333 [INFO] __main__ — Folder 'Shared/CHOP_Sponsor_Invoicing': 0 failed/faulted job(s)
+2026-03-06 17:34:40,673 [INFO] __main__ — Folder 'Testing': 0 failed/faulted job(s)
+2026-03-06 17:34:41,007 [INFO] __main__ — Folder 'Shared/Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:34:41,348 [INFO] __main__ — Folder 'Production': 0 failed/faulted job(s)
+2026-03-06 17:34:41,718 [INFO] __main__ — Folder 'Production/CHOP_Sponsor_Invoice': 0 failed/faulted job(s)
+2026-03-06 17:34:42,020 [INFO] __main__ — Folder 'Production/CHOP_PAA': 0 failed/faulted job(s)
+2026-03-06 17:34:42,584 [INFO] __main__ — Folder 'Production/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:34:42,979 [INFO] __main__ — Folder 'Production/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:34:43,482 [INFO] __main__ — Folder 'Production/CHOP_Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:34:43,815 [INFO] __main__ — Folder 'Production/CHOP_PB_Medical_Results': 0 failed/faulted job(s)
+2026-03-06 17:34:44,171 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:34:44,171 [INFO] __main__ — Folder 'shenoya2@chop.edu's workspace/Debug_Solution': 0 failed/faulted job(s)
+2026-03-06 17:34:44,341 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:34:44,507 [INFO] __main__ — Folder 'Production/Agent_StorageBucketDownloader': 0 failed/faulted job(s)
+2026-03-06 17:34:44,864 [INFO] __main__ — Folder 'Production/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:34:45,188 [INFO] __main__ — Folder 'Shared/CHOP_Case Management Payor Correspondence': 0 failed/faulted job(s)
+2026-03-06 17:34:45,587 [INFO] __main__ — Folder 'Shared/CHOP_EligibilityDenials': 7 failed/faulted job(s)
+2026-03-06 17:34:45,742 [ERROR] __main__ — Fatal error: API error 400 for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/RobotLogs
+Body: {"message":"Invalid OData query options.","errorCode":1000,"traceId":"00-1fd79a1f20410a2f1fdd0e9528ef0f8e-317916bf863cb8b9-01","details":"Unrecognized 'Edm.String' literal 'guid'2511ac6c-bd81-4e6d-af1f-0b38e81a9871'' at '10' in 'JobKey eq guid'2511ac6c-bd81-4e6d-af1f-0b38e81a9871' and Level eq 'Error''."}
+Traceback (most recent call last):
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 77, in <module>
+    main()
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 54, in main
+    job["logs"] = client.get_job_logs(job["Key"], folder_id)
+  File "/Users/karthik/git_p/uipath/uipath_monitor/api_client.py", line 100, in get_job_logs
+    data = self._get(
+  File "/Users/karthik/git_p/uipath/uipath_monitor/api_client.py", line 50, in _get
+    raise RuntimeError(
+RuntimeError: API error 400 for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/RobotLogs
+Body: {"message":"Invalid OData query options.","errorCode":1000,"traceId":"00-1fd79a1f20410a2f1fdd0e9528ef0f8e-317916bf863cb8b9-01","details":"Unrecognized 'Edm.String' literal 'guid'2511ac6c-bd81-4e6d-af1f-0b38e81a9871'' at '10' in 'JobKey eq guid'2511ac6c-bd81-4e6d-af1f-0b38e81a9871' and Level eq 'Error''."}
+2026-03-06 17:34:56,551 [INFO] __main__ — Starting UiPath health check
+2026-03-06 17:34:56,790 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 17:34:56,972 [INFO] __main__ — Folder 'Shared': 0 failed/faulted job(s)
+2026-03-06 17:34:57,321 [INFO] __main__ — Folder 'Shared/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:34:57,640 [INFO] __main__ — Folder 'Shared/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:34:57,974 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:34:57,975 [INFO] __main__ — Folder 'Development': 0 failed/faulted job(s)
+2026-03-06 17:34:58,130 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:34:58,295 [INFO] __main__ — Folder 'Shared/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:34:58,700 [INFO] __main__ — Folder 'UAT': 0 failed/faulted job(s)
+2026-03-06 17:34:59,023 [INFO] __main__ — Folder 'Shared/CHOP_PB_Medical_Record_Update': 0 failed/faulted job(s)
+2026-03-06 17:34:59,320 [INFO] __main__ — Folder 'Shared/CHOP_Sponsor_Invoicing': 0 failed/faulted job(s)
+2026-03-06 17:34:59,707 [INFO] __main__ — Folder 'Testing': 0 failed/faulted job(s)
+2026-03-06 17:35:00,072 [INFO] __main__ — Folder 'Shared/Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:35:00,371 [INFO] __main__ — Folder 'Production': 0 failed/faulted job(s)
+2026-03-06 17:35:00,756 [INFO] __main__ — Folder 'Production/CHOP_Sponsor_Invoice': 0 failed/faulted job(s)
+2026-03-06 17:35:01,119 [INFO] __main__ — Folder 'Production/CHOP_PAA': 0 failed/faulted job(s)
+2026-03-06 17:35:01,497 [INFO] __main__ — Folder 'Production/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:35:01,846 [INFO] __main__ — Folder 'Production/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:35:02,404 [INFO] __main__ — Folder 'Production/CHOP_Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:35:02,731 [INFO] __main__ — Folder 'Production/CHOP_PB_Medical_Results': 0 failed/faulted job(s)
+2026-03-06 17:35:03,057 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:35:03,057 [INFO] __main__ — Folder 'shenoya2@chop.edu's workspace/Debug_Solution': 0 failed/faulted job(s)
+2026-03-06 17:35:03,217 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:35:03,391 [INFO] __main__ — Folder 'Production/Agent_StorageBucketDownloader': 0 failed/faulted job(s)
+2026-03-06 17:35:03,741 [INFO] __main__ — Folder 'Production/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:35:04,053 [INFO] __main__ — Folder 'Shared/CHOP_Case Management Payor Correspondence': 0 failed/faulted job(s)
+2026-03-06 17:35:04,439 [INFO] __main__ — Folder 'Shared/CHOP_EligibilityDenials': 7 failed/faulted job(s)
+2026-03-06 17:35:04,610 [ERROR] __main__ — Fatal error: API error 400 for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/RobotLogs
+Body: {"message":"Invalid OData query options.","errorCode":1000,"traceId":"00-478302039018d97c1afc965a39812ab6-24b0d1624d91cbfc-00","details":"A binary operator with incompatible types was detected. Found operand types 'Edm.Guid' and 'Edm.String' for operator kind 'Equal'."}
+Traceback (most recent call last):
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 77, in <module>
+    main()
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 54, in main
+    job["logs"] = client.get_job_logs(job["Key"], folder_id)
+  File "/Users/karthik/git_p/uipath/uipath_monitor/api_client.py", line 100, in get_job_logs
+    data = self._get(
+  File "/Users/karthik/git_p/uipath/uipath_monitor/api_client.py", line 50, in _get
+    raise RuntimeError(
+RuntimeError: API error 400 for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/RobotLogs
+Body: {"message":"Invalid OData query options.","errorCode":1000,"traceId":"00-478302039018d97c1afc965a39812ab6-24b0d1624d91cbfc-00","details":"A binary operator with incompatible types was detected. Found operand types 'Edm.Guid' and 'Edm.String' for operator kind 'Equal'."}
+2026-03-06 17:35:18,609 [INFO] __main__ — Starting UiPath health check
+2026-03-06 17:35:18,788 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 17:35:18,946 [INFO] __main__ — Folder 'Shared': 0 failed/faulted job(s)
+2026-03-06 17:35:19,277 [INFO] __main__ — Folder 'Shared/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:35:19,645 [INFO] __main__ — Folder 'Shared/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:35:19,994 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:35:19,994 [INFO] __main__ — Folder 'Development': 0 failed/faulted job(s)
+2026-03-06 17:35:20,131 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:35:20,312 [INFO] __main__ — Folder 'Shared/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:35:20,680 [INFO] __main__ — Folder 'UAT': 0 failed/faulted job(s)
+2026-03-06 17:35:21,043 [INFO] __main__ — Folder 'Shared/CHOP_PB_Medical_Record_Update': 0 failed/faulted job(s)
+2026-03-06 17:35:21,345 [INFO] __main__ — Folder 'Shared/CHOP_Sponsor_Invoicing': 0 failed/faulted job(s)
+2026-03-06 17:35:21,731 [INFO] __main__ — Folder 'Testing': 0 failed/faulted job(s)
+2026-03-06 17:35:22,092 [INFO] __main__ — Folder 'Shared/Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:35:22,391 [INFO] __main__ — Folder 'Production': 0 failed/faulted job(s)
+2026-03-06 17:35:22,781 [INFO] __main__ — Folder 'Production/CHOP_Sponsor_Invoice': 0 failed/faulted job(s)
+2026-03-06 17:35:23,141 [INFO] __main__ — Folder 'Production/CHOP_PAA': 0 failed/faulted job(s)
+2026-03-06 17:35:23,489 [INFO] __main__ — Folder 'Production/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:35:23,826 [INFO] __main__ — Folder 'Production/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:35:24,189 [INFO] __main__ — Folder 'Production/CHOP_Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:35:24,521 [INFO] __main__ — Folder 'Production/CHOP_PB_Medical_Results': 0 failed/faulted job(s)
+2026-03-06 17:35:24,842 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:35:24,842 [INFO] __main__ — Folder 'shenoya2@chop.edu's workspace/Debug_Solution': 0 failed/faulted job(s)
+2026-03-06 17:35:25,005 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:35:25,237 [INFO] __main__ — Folder 'Production/Agent_StorageBucketDownloader': 0 failed/faulted job(s)
+2026-03-06 17:35:25,539 [INFO] __main__ — Folder 'Production/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:35:25,948 [INFO] __main__ — Folder 'Shared/CHOP_Case Management Payor Correspondence': 0 failed/faulted job(s)
+2026-03-06 17:35:26,289 [INFO] __main__ — Folder 'Shared/CHOP_EligibilityDenials': 7 failed/faulted job(s)
+2026-03-06 17:35:28,459 [INFO] __main__ — Folder 'Shared/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 17:35:28,808 [INFO] __main__ — Folder 'Shared/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 17:35:29,141 [INFO] __main__ — Folder 'Production/CHOP_EligibilityDenials': 0 failed/faulted job(s)
+2026-03-06 17:35:29,583 [INFO] __main__ — Folder 'Production/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 17:35:29,956 [INFO] __main__ — Folder 'Production/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 17:35:30,281 [INFO] __main__ — Folder 'Production/CHOP_WellsFargoLockbox_Correspondence_Management': 0 failed/faulted job(s)
+2026-03-06 17:35:30,644 [INFO] __main__ — Folder 'Production/CHOP_CaseManagement': 0 failed/faulted job(s)
+2026-03-06 17:35:31,005 [INFO] __main__ — Folder 'Shared/CHOP_WellsFargoMailCorr': 0 failed/faulted job(s)
+2026-03-06 17:35:31,140 [INFO] __main__ — Summary: 92 total jobs, 7 faulted/failed
+2026-03-06 17:35:39,110 [ERROR] __main__ — Fatal error: (535, b'5.7.139 Authentication unsuccessful, the user credentials were incorrect. [YQBPR0101CA0273.CANPRD01.PROD.OUTLOOK.COM 2026-03-06T22:35:33.795Z 08DE7B0E1DE6A904]')
+Traceback (most recent call last):
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 77, in <module>
+    main()
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 69, in main
+    send_email(cfg, html)
+  File "/Users/karthik/git_p/uipath/uipath_monitor/notifiers.py", line 32, in send_email
+    smtp.login(cfg.smtp_user, cfg.smtp_password)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 745, in login
+    raise last_exception
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 734, in login
+    (code, resp) = self.auth(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 657, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.139 Authentication unsuccessful, the user credentials were incorrect. [YQBPR0101CA0273.CANPRD01.PROD.OUTLOOK.COM 2026-03-06T22:35:33.795Z 08DE7B0E1DE6A904]')
+2026-03-06 17:38:05,606 [INFO] __main__ — Starting UiPath health check
+2026-03-06 17:38:05,839 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 17:38:06,004 [INFO] __main__ — Folder 'Shared': 0 failed/faulted job(s)
+2026-03-06 17:38:06,389 [INFO] __main__ — Folder 'Shared/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:38:06,713 [INFO] __main__ — Folder 'Shared/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:38:07,010 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:38:07,010 [INFO] __main__ — Folder 'Development': 0 failed/faulted job(s)
+2026-03-06 17:38:07,237 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:38:07,405 [INFO] __main__ — Folder 'Shared/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:38:07,761 [INFO] __main__ — Folder 'UAT': 0 failed/faulted job(s)
+2026-03-06 17:38:08,068 [INFO] __main__ — Folder 'Shared/CHOP_PB_Medical_Record_Update': 0 failed/faulted job(s)
+2026-03-06 17:38:08,445 [INFO] __main__ — Folder 'Shared/CHOP_Sponsor_Invoicing': 0 failed/faulted job(s)
+2026-03-06 17:38:08,810 [INFO] __main__ — Folder 'Testing': 0 failed/faulted job(s)
+2026-03-06 17:38:09,116 [INFO] __main__ — Folder 'Shared/Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:38:09,501 [INFO] __main__ — Folder 'Production': 0 failed/faulted job(s)
+2026-03-06 17:38:09,860 [INFO] __main__ — Folder 'Production/CHOP_Sponsor_Invoice': 0 failed/faulted job(s)
+2026-03-06 17:38:10,179 [INFO] __main__ — Folder 'Production/CHOP_PAA': 0 failed/faulted job(s)
+2026-03-06 17:38:10,542 [INFO] __main__ — Folder 'Production/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:38:10,913 [INFO] __main__ — Folder 'Production/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:38:11,258 [INFO] __main__ — Folder 'Production/CHOP_Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:38:11,591 [INFO] __main__ — Folder 'Production/CHOP_PB_Medical_Results': 0 failed/faulted job(s)
+2026-03-06 17:38:12,036 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:38:12,037 [INFO] __main__ — Folder 'shenoya2@chop.edu's workspace/Debug_Solution': 0 failed/faulted job(s)
+2026-03-06 17:38:12,176 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:38:12,335 [INFO] __main__ — Folder 'Production/Agent_StorageBucketDownloader': 0 failed/faulted job(s)
+2026-03-06 17:38:12,684 [INFO] __main__ — Folder 'Production/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:38:13,015 [INFO] __main__ — Folder 'Shared/CHOP_Case Management Payor Correspondence': 0 failed/faulted job(s)
+2026-03-06 17:38:13,404 [INFO] __main__ — Folder 'Shared/CHOP_EligibilityDenials': 7 failed/faulted job(s)
+2026-03-06 17:38:15,625 [INFO] __main__ — Folder 'Shared/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 17:38:15,953 [INFO] __main__ — Folder 'Shared/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 17:38:16,356 [INFO] __main__ — Folder 'Production/CHOP_EligibilityDenials': 0 failed/faulted job(s)
+2026-03-06 17:38:16,692 [INFO] __main__ — Folder 'Production/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 17:38:17,020 [INFO] __main__ — Folder 'Production/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 17:38:17,353 [INFO] __main__ — Folder 'Production/CHOP_WellsFargoLockbox_Correspondence_Management': 0 failed/faulted job(s)
+2026-03-06 17:38:17,723 [INFO] __main__ — Folder 'Production/CHOP_CaseManagement': 0 failed/faulted job(s)
+2026-03-06 17:38:18,084 [INFO] __main__ — Folder 'Shared/CHOP_WellsFargoMailCorr': 0 failed/faulted job(s)
+2026-03-06 17:38:18,246 [INFO] __main__ — Summary: 93 total jobs, 7 faulted/failed
+2026-03-06 17:38:24,594 [ERROR] __main__ — Fatal error: (535, b'5.7.139 Authentication unsuccessful, the user credentials were incorrect. [YQBPR01CA0115.CANPRD01.PROD.OUTLOOK.COM 2026-03-06T22:38:23.534Z 08DE7B85898413BB]')
+Traceback (most recent call last):
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 77, in <module>
+    main()
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 69, in main
+    send_email(cfg, html)
+  File "/Users/karthik/git_p/uipath/uipath_monitor/notifiers.py", line 32, in send_email
+    smtp.login(cfg.smtp_user, cfg.smtp_password)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 745, in login
+    raise last_exception
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 734, in login
+    (code, resp) = self.auth(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 657, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.139 Authentication unsuccessful, the user credentials were incorrect. [YQBPR01CA0115.CANPRD01.PROD.OUTLOOK.COM 2026-03-06T22:38:23.534Z 08DE7B85898413BB]')
+2026-03-06 17:42:37,625 [INFO] __main__ — Starting UiPath health check
+2026-03-06 17:42:37,842 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 17:42:38,006 [INFO] __main__ — Folder 'Shared': 0 failed/faulted job(s)
+2026-03-06 17:42:38,315 [INFO] __main__ — Folder 'Shared/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:42:38,626 [INFO] __main__ — Folder 'Shared/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:42:38,948 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:42:38,948 [INFO] __main__ — Folder 'Development': 0 failed/faulted job(s)
+2026-03-06 17:42:39,093 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:42:39,334 [INFO] __main__ — Folder 'Shared/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:42:39,641 [INFO] __main__ — Folder 'UAT': 0 failed/faulted job(s)
+2026-03-06 17:42:40,058 [INFO] __main__ — Folder 'Shared/CHOP_PB_Medical_Record_Update': 0 failed/faulted job(s)
+2026-03-06 17:42:40,390 [INFO] __main__ — Folder 'Shared/CHOP_Sponsor_Invoicing': 0 failed/faulted job(s)
+2026-03-06 17:42:40,708 [INFO] __main__ — Folder 'Testing': 0 failed/faulted job(s)
+2026-03-06 17:42:41,062 [INFO] __main__ — Folder 'Shared/Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:42:41,430 [INFO] __main__ — Folder 'Production': 0 failed/faulted job(s)
+2026-03-06 17:42:41,734 [INFO] __main__ — Folder 'Production/CHOP_Sponsor_Invoice': 0 failed/faulted job(s)
+2026-03-06 17:42:42,139 [INFO] __main__ — Folder 'Production/CHOP_PAA': 0 failed/faulted job(s)
+2026-03-06 17:42:42,481 [INFO] __main__ — Folder 'Production/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:42:42,784 [INFO] __main__ — Folder 'Production/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:42:43,172 [INFO] __main__ — Folder 'Production/CHOP_Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:42:43,527 [INFO] __main__ — Folder 'Production/CHOP_PB_Medical_Results': 0 failed/faulted job(s)
+2026-03-06 17:42:43,829 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:42:43,829 [INFO] __main__ — Folder 'shenoya2@chop.edu's workspace/Debug_Solution': 0 failed/faulted job(s)
+2026-03-06 17:42:43,959 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:42:44,198 [INFO] __main__ — Folder 'Production/Agent_StorageBucketDownloader': 0 failed/faulted job(s)
+2026-03-06 17:42:44,576 [INFO] __main__ — Folder 'Production/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:42:44,900 [INFO] __main__ — Folder 'Shared/CHOP_Case Management Payor Correspondence': 0 failed/faulted job(s)
+2026-03-06 17:42:45,269 [INFO] __main__ — Folder 'Shared/CHOP_EligibilityDenials': 7 failed/faulted job(s)
+2026-03-06 17:42:47,591 [INFO] __main__ — Folder 'Shared/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 17:42:47,898 [INFO] __main__ — Folder 'Shared/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 17:42:48,247 [INFO] __main__ — Folder 'Production/CHOP_EligibilityDenials': 0 failed/faulted job(s)
+2026-03-06 17:42:48,540 [INFO] __main__ — Folder 'Production/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 17:42:48,915 [INFO] __main__ — Folder 'Production/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 17:42:49,294 [INFO] __main__ — Folder 'Production/CHOP_WellsFargoLockbox_Correspondence_Management': 0 failed/faulted job(s)
+2026-03-06 17:42:49,690 [INFO] __main__ — Folder 'Production/CHOP_CaseManagement': 0 failed/faulted job(s)
+2026-03-06 17:42:50,018 [INFO] __main__ — Folder 'Shared/CHOP_WellsFargoMailCorr': 0 failed/faulted job(s)
+2026-03-06 17:42:50,160 [INFO] __main__ — Summary: 92 total jobs, 7 faulted/failed
+2026-03-06 17:42:50,634 [ERROR] __main__ — Fatal error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-89a3173c581sm25070366d6.53 - gsmtp')
+Traceback (most recent call last):
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 77, in <module>
+    main()
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 69, in main
+    send_email(cfg, html)
+  File "/Users/karthik/git_p/uipath/uipath_monitor/notifiers.py", line 32, in send_email
+    smtp.login(cfg.smtp_user, cfg.smtp_password)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 745, in login
+    raise last_exception
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 734, in login
+    (code, resp) = self.auth(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 657, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-89a3173c581sm25070366d6.53 - gsmtp')
+2026-03-06 17:45:02,353 [INFO] __main__ — Starting UiPath health check
+2026-03-06 17:45:02,659 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 17:45:02,824 [INFO] __main__ — Folder 'Shared': 0 failed/faulted job(s)
+2026-03-06 17:45:03,164 [INFO] __main__ — Folder 'Shared/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:45:03,583 [INFO] __main__ — Folder 'Shared/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:45:03,878 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:45:03,879 [INFO] __main__ — Folder 'Development': 0 failed/faulted job(s)
+2026-03-06 17:45:04,031 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:45:04,202 [INFO] __main__ — Folder 'Shared/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:45:04,592 [INFO] __main__ — Folder 'UAT': 0 failed/faulted job(s)
+2026-03-06 17:45:04,988 [INFO] __main__ — Folder 'Shared/CHOP_PB_Medical_Record_Update': 0 failed/faulted job(s)
+2026-03-06 17:45:05,444 [INFO] __main__ — Folder 'Shared/CHOP_Sponsor_Invoicing': 0 failed/faulted job(s)
+2026-03-06 17:45:05,781 [INFO] __main__ — Folder 'Testing': 0 failed/faulted job(s)
+2026-03-06 17:45:06,130 [INFO] __main__ — Folder 'Shared/Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:45:06,454 [INFO] __main__ — Folder 'Production': 0 failed/faulted job(s)
+2026-03-06 17:45:06,845 [INFO] __main__ — Folder 'Production/CHOP_Sponsor_Invoice': 0 failed/faulted job(s)
+2026-03-06 17:45:07,177 [INFO] __main__ — Folder 'Production/CHOP_PAA': 0 failed/faulted job(s)
+2026-03-06 17:45:07,579 [INFO] __main__ — Folder 'Production/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:45:07,885 [INFO] __main__ — Folder 'Production/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:45:08,226 [INFO] __main__ — Folder 'Production/CHOP_Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:45:08,569 [INFO] __main__ — Folder 'Production/CHOP_PB_Medical_Results': 0 failed/faulted job(s)
+2026-03-06 17:45:08,893 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:45:08,894 [INFO] __main__ — Folder 'shenoya2@chop.edu's workspace/Debug_Solution': 0 failed/faulted job(s)
+2026-03-06 17:45:09,034 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:45:09,274 [INFO] __main__ — Folder 'Production/Agent_StorageBucketDownloader': 0 failed/faulted job(s)
+2026-03-06 17:45:09,566 [INFO] __main__ — Folder 'Production/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:45:09,952 [INFO] __main__ — Folder 'Shared/CHOP_Case Management Payor Correspondence': 0 failed/faulted job(s)
+2026-03-06 17:45:10,323 [INFO] __main__ — Folder 'Shared/CHOP_EligibilityDenials': 7 failed/faulted job(s)
+2026-03-06 17:45:12,158 [INFO] __main__ — Folder 'Shared/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 17:45:12,621 [INFO] __main__ — Folder 'Shared/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 17:45:12,944 [INFO] __main__ — Folder 'Production/CHOP_EligibilityDenials': 0 failed/faulted job(s)
+2026-03-06 17:45:13,249 [INFO] __main__ — Folder 'Production/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 17:45:13,670 [INFO] __main__ — Folder 'Production/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 17:45:14,014 [INFO] __main__ — Folder 'Production/CHOP_WellsFargoLockbox_Correspondence_Management': 0 failed/faulted job(s)
+2026-03-06 17:45:14,354 [INFO] __main__ — Folder 'Production/CHOP_CaseManagement': 0 failed/faulted job(s)
+2026-03-06 17:45:14,748 [INFO] __main__ — Folder 'Shared/CHOP_WellsFargoMailCorr': 0 failed/faulted job(s)
+2026-03-06 17:45:14,901 [INFO] __main__ — Summary: 92 total jobs, 7 faulted/failed
+2026-03-06 17:45:25,337 [ERROR] __main__ — Fatal error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d75a77b69052e-508fcd9e5c8sm11456951cf.26 - gsmtp')
+Traceback (most recent call last):
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 77, in <module>
+    main()
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 69, in main
+    send_email(cfg, html)
+  File "/Users/karthik/git_p/uipath/uipath_monitor/notifiers.py", line 32, in send_email
+    smtp.login(cfg.smtp_user, cfg.smtp_password)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 745, in login
+    raise last_exception
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 734, in login
+    (code, resp) = self.auth(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 657, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d75a77b69052e-508fcd9e5c8sm11456951cf.26 - gsmtp')
+2026-03-06 17:48:02,994 [INFO] __main__ — Starting UiPath health check
+2026-03-06 17:48:03,199 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 17:48:03,373 [INFO] __main__ — Folder 'Shared': 0 failed/faulted job(s)
+2026-03-06 17:48:03,712 [INFO] __main__ — Folder 'Shared/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:48:04,382 [INFO] __main__ — Folder 'Shared/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:48:04,773 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:48:04,774 [INFO] __main__ — Folder 'Development': 0 failed/faulted job(s)
+2026-03-06 17:48:04,958 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:48:05,162 [INFO] __main__ — Folder 'Shared/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:48:05,954 [INFO] __main__ — Folder 'UAT': 0 failed/faulted job(s)
+2026-03-06 17:48:06,259 [INFO] __main__ — Folder 'Shared/CHOP_PB_Medical_Record_Update': 0 failed/faulted job(s)
+2026-03-06 17:48:06,655 [INFO] __main__ — Folder 'Shared/CHOP_Sponsor_Invoicing': 0 failed/faulted job(s)
+2026-03-06 17:48:07,009 [INFO] __main__ — Folder 'Testing': 0 failed/faulted job(s)
+2026-03-06 17:48:07,338 [INFO] __main__ — Folder 'Shared/Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:48:07,691 [INFO] __main__ — Folder 'Production': 0 failed/faulted job(s)
+2026-03-06 17:48:08,051 [INFO] __main__ — Folder 'Production/CHOP_Sponsor_Invoice': 0 failed/faulted job(s)
+2026-03-06 17:48:08,397 [INFO] __main__ — Folder 'Production/CHOP_PAA': 0 failed/faulted job(s)
+2026-03-06 17:48:08,803 [INFO] __main__ — Folder 'Production/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:48:09,110 [INFO] __main__ — Folder 'Production/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:48:09,450 [INFO] __main__ — Folder 'Production/CHOP_Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:48:09,808 [INFO] __main__ — Folder 'Production/CHOP_PB_Medical_Results': 0 failed/faulted job(s)
+2026-03-06 17:48:10,160 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:48:10,160 [INFO] __main__ — Folder 'shenoya2@chop.edu's workspace/Debug_Solution': 0 failed/faulted job(s)
+2026-03-06 17:48:10,302 [WARNING] api_client — No access to folder for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs — skipping
+2026-03-06 17:48:10,474 [INFO] __main__ — Folder 'Production/Agent_StorageBucketDownloader': 0 failed/faulted job(s)
+2026-03-06 17:48:10,838 [INFO] __main__ — Folder 'Production/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:48:11,198 [INFO] __main__ — Folder 'Shared/CHOP_Case Management Payor Correspondence': 0 failed/faulted job(s)
+2026-03-06 17:48:11,531 [INFO] __main__ — Folder 'Shared/CHOP_EligibilityDenials': 7 failed/faulted job(s)
+2026-03-06 17:48:13,623 [INFO] __main__ — Folder 'Shared/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 17:48:13,977 [INFO] __main__ — Folder 'Shared/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 17:48:14,342 [INFO] __main__ — Folder 'Production/CHOP_EligibilityDenials': 0 failed/faulted job(s)
+2026-03-06 17:48:14,635 [INFO] __main__ — Folder 'Production/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 17:48:15,045 [INFO] __main__ — Folder 'Production/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 17:48:15,391 [INFO] __main__ — Folder 'Production/CHOP_WellsFargoLockbox_Correspondence_Management': 0 failed/faulted job(s)
+2026-03-06 17:48:15,721 [INFO] __main__ — Folder 'Production/CHOP_CaseManagement': 0 failed/faulted job(s)
+2026-03-06 17:48:16,075 [INFO] __main__ — Folder 'Shared/CHOP_WellsFargoMailCorr': 0 failed/faulted job(s)
+2026-03-06 17:48:16,218 [INFO] __main__ — Summary: 92 total jobs, 7 faulted/failed
+2026-03-06 17:48:16,635 [ERROR] __main__ — Fatal error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-89a316ec8absm25109546d6.40 - gsmtp')
+Traceback (most recent call last):
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 77, in <module>
+    main()
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 69, in main
+    send_email(cfg, html)
+  File "/Users/karthik/git_p/uipath/uipath_monitor/notifiers.py", line 32, in send_email
+    smtp.login(cfg.smtp_user, cfg.smtp_password)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 745, in login
+    raise last_exception
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 734, in login
+    (code, resp) = self.auth(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 657, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-89a316ec8absm25109546d6.40 - gsmtp')
+2026-03-06 17:53:44,301 [INFO] __main__ — Starting UiPath health check
+2026-03-06 17:53:44,510 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 17:53:44,745 [INFO] __main__ — Folder 'Shared': 0 failed/faulted job(s)
+2026-03-06 17:53:45,038 [INFO] __main__ — Folder 'Shared/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:53:45,346 [INFO] __main__ — Folder 'Shared/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:53:45,682 [INFO] __main__ — Folder 'Development': 0 failed/faulted job(s)
+2026-03-06 17:53:46,037 [INFO] __main__ — Folder 'Shared/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:53:46,390 [INFO] __main__ — Folder 'UAT': 0 failed/faulted job(s)
+2026-03-06 17:53:46,730 [INFO] __main__ — Folder 'Shared/CHOP_PB_Medical_Record_Update': 0 failed/faulted job(s)
+2026-03-06 17:53:47,103 [INFO] __main__ — Folder 'Shared/CHOP_Sponsor_Invoicing': 0 failed/faulted job(s)
+2026-03-06 17:53:47,410 [INFO] __main__ — Folder 'Testing': 0 failed/faulted job(s)
+2026-03-06 17:53:47,778 [INFO] __main__ — Folder 'Shared/Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:53:48,056 [INFO] __main__ — Folder 'Production': 0 failed/faulted job(s)
+2026-03-06 17:53:48,340 [INFO] __main__ — Folder 'Production/CHOP_Sponsor_Invoice': 0 failed/faulted job(s)
+2026-03-06 17:53:48,622 [INFO] __main__ — Folder 'Production/CHOP_PAA': 0 failed/faulted job(s)
+2026-03-06 17:53:48,991 [INFO] __main__ — Folder 'Production/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:53:49,351 [INFO] __main__ — Folder 'Production/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:53:49,688 [INFO] __main__ — Folder 'Production/CHOP_Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:53:50,061 [INFO] __main__ — Folder 'Production/CHOP_PB_Medical_Results': 0 failed/faulted job(s)
+2026-03-06 17:53:50,400 [INFO] __main__ — Folder 'shenoya2@chop.edu's workspace/Debug_Solution': 0 failed/faulted job(s)
+2026-03-06 17:53:50,675 [INFO] __main__ — Folder 'Production/Agent_StorageBucketDownloader': 0 failed/faulted job(s)
+2026-03-06 17:53:50,974 [INFO] __main__ — Folder 'Production/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:53:51,258 [INFO] __main__ — Folder 'Shared/CHOP_Case Management Payor Correspondence': 0 failed/faulted job(s)
+2026-03-06 17:53:51,602 [INFO] __main__ — Folder 'Shared/CHOP_EligibilityDenials': 7 failed/faulted job(s)
+2026-03-06 17:53:53,414 [INFO] __main__ — Folder 'Shared/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 17:53:53,701 [INFO] __main__ — Folder 'Shared/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 17:53:53,977 [INFO] __main__ — Folder 'Production/CHOP_EligibilityDenials': 0 failed/faulted job(s)
+2026-03-06 17:53:54,348 [INFO] __main__ — Folder 'Production/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 17:53:54,645 [INFO] __main__ — Folder 'Production/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 17:53:54,965 [INFO] __main__ — Folder 'Production/CHOP_WellsFargoLockbox_Correspondence_Management': 0 failed/faulted job(s)
+2026-03-06 17:53:55,273 [INFO] __main__ — Folder 'Production/CHOP_CaseManagement': 0 failed/faulted job(s)
+2026-03-06 17:53:55,644 [INFO] __main__ — Folder 'Shared/CHOP_WellsFargoMailCorr': 0 failed/faulted job(s)
+2026-03-06 17:53:55,786 [INFO] __main__ — Summary: 92 total jobs, 7 faulted/failed
+2026-03-06 17:53:56,222 [ERROR] __main__ — Fatal error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-89a31717d85sm21540546d6.46 - gsmtp')
+Traceback (most recent call last):
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 77, in <module>
+    main()
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 69, in main
+    send_email(cfg, html)
+  File "/Users/karthik/git_p/uipath/uipath_monitor/notifiers.py", line 32, in send_email
+    smtp.login(cfg.smtp_user, cfg.smtp_password)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 745, in login
+    raise last_exception
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 734, in login
+    (code, resp) = self.auth(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/smtplib.py", line 657, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-89a31717d85sm21540546d6.46 - gsmtp')
+2026-03-06 17:54:23,524 [INFO] __main__ — Starting UiPath health check
+2026-03-06 17:54:23,712 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 17:54:23,953 [INFO] __main__ — Folder 'Shared': 0 failed/faulted job(s)
+2026-03-06 17:54:24,359 [INFO] __main__ — Folder 'Shared/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:54:24,709 [INFO] __main__ — Folder 'Shared/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:54:25,051 [INFO] __main__ — Folder 'Development': 0 failed/faulted job(s)
+2026-03-06 17:54:25,526 [INFO] __main__ — Folder 'Shared/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:54:26,065 [INFO] __main__ — Folder 'UAT': 0 failed/faulted job(s)
+2026-03-06 17:54:26,574 [INFO] __main__ — Folder 'Shared/CHOP_PB_Medical_Record_Update': 0 failed/faulted job(s)
+2026-03-06 17:54:26,890 [INFO] __main__ — Folder 'Shared/CHOP_Sponsor_Invoicing': 0 failed/faulted job(s)
+2026-03-06 17:54:27,281 [INFO] __main__ — Folder 'Testing': 0 failed/faulted job(s)
+2026-03-06 17:54:27,622 [INFO] __main__ — Folder 'Shared/Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:54:27,923 [INFO] __main__ — Folder 'Production': 0 failed/faulted job(s)
+2026-03-06 17:54:28,298 [INFO] __main__ — Folder 'Production/CHOP_Sponsor_Invoice': 0 failed/faulted job(s)
+2026-03-06 17:54:28,672 [INFO] __main__ — Folder 'Production/CHOP_PAA': 0 failed/faulted job(s)
+2026-03-06 17:54:29,025 [INFO] __main__ — Folder 'Production/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:54:29,358 [INFO] __main__ — Folder 'Production/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:54:29,720 [INFO] __main__ — Folder 'Production/CHOP_Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:54:30,038 [INFO] __main__ — Folder 'Production/CHOP_PB_Medical_Results': 0 failed/faulted job(s)
+2026-03-06 17:54:30,376 [INFO] __main__ — Folder 'shenoya2@chop.edu's workspace/Debug_Solution': 0 failed/faulted job(s)
+2026-03-06 17:54:30,676 [INFO] __main__ — Folder 'Production/Agent_StorageBucketDownloader': 0 failed/faulted job(s)
+2026-03-06 17:54:31,058 [INFO] __main__ — Folder 'Production/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:54:31,455 [INFO] __main__ — Folder 'Shared/CHOP_Case Management Payor Correspondence': 0 failed/faulted job(s)
+2026-03-06 17:54:31,821 [INFO] __main__ — Folder 'Shared/CHOP_EligibilityDenials': 7 failed/faulted job(s)
+2026-03-06 17:54:33,729 [INFO] __main__ — Folder 'Shared/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 17:54:34,079 [INFO] __main__ — Folder 'Shared/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 17:54:34,439 [INFO] __main__ — Folder 'Production/CHOP_EligibilityDenials': 0 failed/faulted job(s)
+2026-03-06 17:54:34,471 [ERROR] __main__ — Fatal error: API error 429 for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs
+Body: { "statusCode": 429, "message": "Rate limit is exceeded. Try again in 11 seconds." }
+Traceback (most recent call last):
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 91, in <module>
+    main()
+  File "/Users/karthik/git_p/uipath/uipath_monitor/main.py", line 58, in main
+    total_count += client.get_total_job_count(folder)
+  File "/Users/karthik/git_p/uipath/uipath_monitor/api_client.py", line 87, in get_total_job_count
+    data = self._get(
+  File "/Users/karthik/git_p/uipath/uipath_monitor/api_client.py", line 50, in _get
+    raise RuntimeError(
+RuntimeError: API error 429 for https://cloud.uipath.com/chopmozccyw/DefaultTenant/orchestrator_/odata/Jobs
+Body: { "statusCode": 429, "message": "Rate limit is exceeded. Try again in 11 seconds." }
+2026-03-06 17:54:57,006 [INFO] __main__ — Starting UiPath health check
+2026-03-06 17:54:57,197 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 17:54:57,363 [INFO] __main__ — Folder 'Shared': 0 failed/faulted job(s)
+2026-03-06 17:54:57,688 [INFO] __main__ — Folder 'Shared/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:54:58,031 [INFO] __main__ — Folder 'Shared/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:54:58,417 [INFO] __main__ — Folder 'Development': 0 failed/faulted job(s)
+2026-03-06 17:54:58,755 [INFO] __main__ — Folder 'Shared/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:54:59,142 [INFO] __main__ — Folder 'UAT': 0 failed/faulted job(s)
+2026-03-06 17:54:59,483 [INFO] __main__ — Folder 'Shared/CHOP_PB_Medical_Record_Update': 0 failed/faulted job(s)
+2026-03-06 17:54:59,794 [INFO] __main__ — Folder 'Shared/CHOP_Sponsor_Invoicing': 0 failed/faulted job(s)
+2026-03-06 17:55:00,128 [INFO] __main__ — Folder 'Testing': 0 failed/faulted job(s)
+2026-03-06 17:55:00,434 [INFO] __main__ — Folder 'Shared/Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:55:00,804 [INFO] __main__ — Folder 'Production': 0 failed/faulted job(s)
+2026-03-06 17:55:01,176 [INFO] __main__ — Folder 'Production/CHOP_Sponsor_Invoice': 0 failed/faulted job(s)
+2026-03-06 17:55:01,486 [INFO] __main__ — Folder 'Production/CHOP_PAA': 0 failed/faulted job(s)
+2026-03-06 17:55:01,876 [INFO] __main__ — Folder 'Production/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 17:55:02,225 [INFO] __main__ — Folder 'Production/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 17:55:02,556 [INFO] __main__ — Folder 'Production/CHOP_Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 17:55:02,910 [INFO] __main__ — Folder 'Production/CHOP_PB_Medical_Results': 0 failed/faulted job(s)
+2026-03-06 17:55:03,274 [INFO] __main__ — Folder 'shenoya2@chop.edu's workspace/Debug_Solution': 0 failed/faulted job(s)
+2026-03-06 17:55:03,599 [INFO] __main__ — Folder 'Production/Agent_StorageBucketDownloader': 0 failed/faulted job(s)
+2026-03-06 17:55:03,980 [INFO] __main__ — Folder 'Production/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 17:55:04,322 [INFO] __main__ — Folder 'Shared/CHOP_Case Management Payor Correspondence': 0 failed/faulted job(s)
+2026-03-06 17:55:04,685 [INFO] __main__ — Folder 'Shared/CHOP_EligibilityDenials': 7 failed/faulted job(s)
+2026-03-06 17:55:06,594 [INFO] __main__ — Folder 'Shared/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 17:55:06,943 [INFO] __main__ — Folder 'Shared/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 17:55:07,255 [INFO] __main__ — Folder 'Production/CHOP_EligibilityDenials': 0 failed/faulted job(s)
+2026-03-06 17:55:07,644 [INFO] __main__ — Folder 'Production/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 17:55:07,993 [INFO] __main__ — Folder 'Production/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 17:55:08,338 [INFO] __main__ — Folder 'Production/CHOP_WellsFargoLockbox_Correspondence_Management': 0 failed/faulted job(s)
+2026-03-06 17:55:08,678 [INFO] __main__ — Folder 'Production/CHOP_CaseManagement': 0 failed/faulted job(s)
+2026-03-06 17:55:09,041 [INFO] __main__ — Folder 'Shared/CHOP_WellsFargoMailCorr': 0 failed/faulted job(s)
+2026-03-06 17:55:09,204 [INFO] __main__ — Summary: 92 total jobs, 7 faulted/failed
+2026-03-06 17:55:09,206 [INFO] __main__ — HTML report saved to logs/report_latest.html
+2026-03-06 17:55:19,604 [ERROR] __main__ — Email failed (check SMTP credentials): (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials af79cd13be357-8cd6f4ab73dsm198989585a.20 - gsmtp')
+2026-03-06 17:55:19,708 [ERROR] notifiers — Teams webhook returned 404: 
+2026-03-06 17:55:19,709 [ERROR] __main__ — Teams notification failed (check webhook URL): 404 Client Error: Not Found for url: https://mycompany.webhook.office.com/webhookb2/...
+2026-03-06 17:55:19,709 [INFO] __main__ — Done.
+2026-03-06 18:03:23,375 [INFO] __main__ — Starting UiPath health check
+2026-03-06 18:03:23,622 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 18:03:23,786 [INFO] __main__ — Folder 'Shared': 0 failed/faulted job(s)
+2026-03-06 18:03:24,112 [INFO] __main__ — Folder 'Shared/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 18:03:24,475 [INFO] __main__ — Folder 'Shared/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 18:03:24,772 [INFO] __main__ — Folder 'Development': 0 failed/faulted job(s)
+2026-03-06 18:03:25,159 [INFO] __main__ — Folder 'Shared/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 18:03:25,524 [INFO] __main__ — Folder 'UAT': 0 failed/faulted job(s)
+2026-03-06 18:03:25,849 [INFO] __main__ — Folder 'Shared/CHOP_PB_Medical_Record_Update': 0 failed/faulted job(s)
+2026-03-06 18:03:26,218 [INFO] __main__ — Folder 'Shared/CHOP_Sponsor_Invoicing': 0 failed/faulted job(s)
+2026-03-06 18:03:26,572 [INFO] __main__ — Folder 'Testing': 0 failed/faulted job(s)
+2026-03-06 18:03:26,873 [INFO] __main__ — Folder 'Shared/Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 18:03:27,274 [INFO] __main__ — Folder 'Production': 0 failed/faulted job(s)
+2026-03-06 18:03:27,622 [INFO] __main__ — Folder 'Production/CHOP_Sponsor_Invoice': 0 failed/faulted job(s)
+2026-03-06 18:03:27,919 [INFO] __main__ — Folder 'Production/CHOP_PAA': 0 failed/faulted job(s)
+2026-03-06 18:03:28,307 [INFO] __main__ — Folder 'Production/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 18:03:28,673 [INFO] __main__ — Folder 'Production/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 18:03:29,028 [INFO] __main__ — Folder 'Production/CHOP_Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 18:03:29,379 [INFO] __main__ — Folder 'Production/CHOP_PB_Medical_Results': 0 failed/faulted job(s)
+2026-03-06 18:03:29,718 [INFO] __main__ — Folder 'shenoya2@chop.edu's workspace/Debug_Solution': 0 failed/faulted job(s)
+2026-03-06 18:03:30,067 [INFO] __main__ — Folder 'Production/Agent_StorageBucketDownloader': 0 failed/faulted job(s)
+2026-03-06 18:03:30,426 [INFO] __main__ — Folder 'Production/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 18:03:30,767 [INFO] __main__ — Folder 'Shared/CHOP_Case Management Payor Correspondence': 0 failed/faulted job(s)
+2026-03-06 18:03:31,110 [INFO] __main__ — Folder 'Shared/CHOP_EligibilityDenials': 7 failed/faulted job(s)
+2026-03-06 18:03:33,611 [INFO] __main__ — Folder 'Shared/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 18:03:33,919 [INFO] __main__ — Folder 'Shared/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 18:03:34,252 [INFO] __main__ — Folder 'Production/CHOP_EligibilityDenials': 0 failed/faulted job(s)
+2026-03-06 18:03:34,651 [INFO] __main__ — Folder 'Production/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 18:03:34,963 [INFO] __main__ — Folder 'Production/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 18:03:35,325 [INFO] __main__ — Folder 'Production/CHOP_WellsFargoLockbox_Correspondence_Management': 0 failed/faulted job(s)
+2026-03-06 18:03:35,845 [INFO] __main__ — Folder 'Production/CHOP_CaseManagement': 0 failed/faulted job(s)
+2026-03-06 18:03:36,222 [INFO] __main__ — Folder 'Shared/CHOP_WellsFargoMailCorr': 0 failed/faulted job(s)
+2026-03-06 18:03:36,359 [INFO] __main__ — Summary: 91 total jobs, 7 faulted/failed
+2026-03-06 18:03:36,875 [ERROR] notifiers — Teams webhook returned 404: 
+2026-03-06 18:03:36,878 [INFO] __main__ — Report saved → /Users/karthik/git_p/uipath/uipath_monitor/logs/report_latest.html
+2026-03-06 18:03:47,782 [INFO] __main__ — Starting UiPath health check
+2026-03-06 18:03:48,284 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 18:03:48,683 [INFO] __main__ — Folder 'Shared': 0 failed/faulted job(s)
+2026-03-06 18:03:49,232 [INFO] __main__ — Folder 'Shared/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 18:03:49,641 [INFO] __main__ — Folder 'Shared/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 18:03:49,929 [INFO] __main__ — Folder 'Development': 0 failed/faulted job(s)
+2026-03-06 18:03:50,211 [INFO] __main__ — Folder 'Shared/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 18:03:50,552 [INFO] __main__ — Folder 'UAT': 0 failed/faulted job(s)
+2026-03-06 18:03:50,847 [INFO] __main__ — Folder 'Shared/CHOP_PB_Medical_Record_Update': 0 failed/faulted job(s)
+2026-03-06 18:03:51,220 [INFO] __main__ — Folder 'Shared/CHOP_Sponsor_Invoicing': 0 failed/faulted job(s)
+2026-03-06 18:03:51,551 [INFO] __main__ — Folder 'Testing': 0 failed/faulted job(s)
+2026-03-06 18:03:51,912 [INFO] __main__ — Folder 'Shared/Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 18:03:52,290 [INFO] __main__ — Folder 'Production': 0 failed/faulted job(s)
+2026-03-06 18:03:52,608 [INFO] __main__ — Folder 'Production/CHOP_Sponsor_Invoice': 0 failed/faulted job(s)
+2026-03-06 18:03:53,134 [INFO] __main__ — Folder 'Production/CHOP_PAA': 0 failed/faulted job(s)
+2026-03-06 18:03:53,462 [INFO] __main__ — Folder 'Production/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 18:03:53,741 [INFO] __main__ — Folder 'Production/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 18:03:54,149 [INFO] __main__ — Folder 'Production/CHOP_Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 18:03:54,529 [INFO] __main__ — Folder 'Production/CHOP_PB_Medical_Results': 0 failed/faulted job(s)
+2026-03-06 18:03:54,883 [INFO] __main__ — Folder 'shenoya2@chop.edu's workspace/Debug_Solution': 0 failed/faulted job(s)
+2026-03-06 18:03:55,407 [INFO] __main__ — Folder 'Production/Agent_StorageBucketDownloader': 0 failed/faulted job(s)
+2026-03-06 18:03:56,207 [INFO] __main__ — Folder 'Production/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 18:03:56,521 [INFO] __main__ — Folder 'Shared/CHOP_Case Management Payor Correspondence': 0 failed/faulted job(s)
+2026-03-06 18:03:56,856 [INFO] __main__ — Folder 'Shared/CHOP_EligibilityDenials': 7 failed/faulted job(s)
+2026-03-06 18:03:58,885 [INFO] __main__ — Folder 'Shared/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 18:03:59,236 [INFO] __main__ — Folder 'Shared/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 18:03:59,602 [INFO] __main__ — Folder 'Production/CHOP_EligibilityDenials': 0 failed/faulted job(s)
+2026-03-06 18:03:59,911 [INFO] __main__ — Folder 'Production/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 18:04:00,294 [INFO] __main__ — Folder 'Production/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 18:04:00,660 [INFO] __main__ — Folder 'Production/CHOP_WellsFargoLockbox_Correspondence_Management': 0 failed/faulted job(s)
+2026-03-06 18:04:00,962 [INFO] __main__ — Folder 'Production/CHOP_CaseManagement': 0 failed/faulted job(s)
+2026-03-06 18:04:01,369 [INFO] __main__ — Folder 'Shared/CHOP_WellsFargoMailCorr': 0 failed/faulted job(s)
+2026-03-06 18:04:01,515 [INFO] __main__ — Summary: 91 total jobs, 7 faulted/failed
+2026-03-06 18:04:02,015 [INFO] __main__ — Report saved → /Users/karthik/git_p/uipath/uipath_monitor/logs/report_latest.html
+2026-03-06 18:04:10,311 [INFO] __main__ — Starting UiPath health check
+2026-03-06 18:04:10,634 [INFO] __main__ — Found 30 folder(s)
+2026-03-06 18:04:10,812 [INFO] __main__ — Folder 'Shared': 0 failed/faulted job(s)
+2026-03-06 18:04:11,137 [INFO] __main__ — Folder 'Shared/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 18:04:11,488 [INFO] __main__ — Folder 'Shared/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 18:04:11,798 [INFO] __main__ — Folder 'Development': 0 failed/faulted job(s)
+2026-03-06 18:04:12,183 [INFO] __main__ — Folder 'Shared/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 18:04:12,542 [INFO] __main__ — Folder 'UAT': 0 failed/faulted job(s)
+2026-03-06 18:04:12,878 [INFO] __main__ — Folder 'Shared/CHOP_PB_Medical_Record_Update': 0 failed/faulted job(s)
+2026-03-06 18:04:13,234 [INFO] __main__ — Folder 'Shared/CHOP_Sponsor_Invoicing': 0 failed/faulted job(s)
+2026-03-06 18:04:13,543 [INFO] __main__ — Folder 'Testing': 0 failed/faulted job(s)
+2026-03-06 18:04:14,029 [INFO] __main__ — Folder 'Shared/Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 18:04:14,330 [INFO] __main__ — Folder 'Production': 0 failed/faulted job(s)
+2026-03-06 18:04:14,647 [INFO] __main__ — Folder 'Production/CHOP_Sponsor_Invoice': 0 failed/faulted job(s)
+2026-03-06 18:04:14,971 [INFO] __main__ — Folder 'Production/CHOP_PAA': 0 failed/faulted job(s)
+2026-03-06 18:04:15,331 [INFO] __main__ — Folder 'Production/CHOP_Auth': 0 failed/faulted job(s)
+2026-03-06 18:04:15,650 [INFO] __main__ — Folder 'Production/CHOP_RAC_Audit': 0 failed/faulted job(s)
+2026-03-06 18:04:16,012 [INFO] __main__ — Folder 'Production/CHOP_Pre_Award_Budget': 0 failed/faulted job(s)
+2026-03-06 18:04:16,455 [INFO] __main__ — Folder 'Production/CHOP_PB_Medical_Results': 0 failed/faulted job(s)
+2026-03-06 18:04:16,752 [INFO] __main__ — Folder 'shenoya2@chop.edu's workspace/Debug_Solution': 0 failed/faulted job(s)
+2026-03-06 18:04:17,066 [INFO] __main__ — Folder 'Production/Agent_StorageBucketDownloader': 0 failed/faulted job(s)
+2026-03-06 18:04:17,427 [INFO] __main__ — Folder 'Production/CHOP_ChargeSeg': 0 failed/faulted job(s)
+2026-03-06 18:04:17,631 [INFO] api_client — Rate limited — waiting 15s (attempt 1/3)
+2026-03-06 18:04:32,806 [INFO] __main__ — Folder 'Shared/CHOP_Case Management Payor Correspondence': 0 failed/faulted job(s)
+2026-03-06 18:04:33,156 [INFO] __main__ — Folder 'Shared/CHOP_EligibilityDenials': 7 failed/faulted job(s)
+2026-03-06 18:04:34,892 [INFO] __main__ — Folder 'Shared/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 18:04:35,252 [INFO] __main__ — Folder 'Shared/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 18:04:35,558 [INFO] __main__ — Folder 'Production/CHOP_EligibilityDenials': 0 failed/faulted job(s)
+2026-03-06 18:04:35,977 [INFO] __main__ — Folder 'Production/CHOP_ProviderEnrollment': 0 failed/faulted job(s)
+2026-03-06 18:04:36,310 [INFO] __main__ — Folder 'Production/CHOP_Prior_Auth_Status': 0 failed/faulted job(s)
+2026-03-06 18:04:36,643 [INFO] __main__ — Folder 'Production/CHOP_WellsFargoLockbox_Correspondence_Management': 0 failed/faulted job(s)
+2026-03-06 18:04:36,991 [INFO] __main__ — Folder 'Production/CHOP_CaseManagement': 0 failed/faulted job(s)
+2026-03-06 18:04:37,350 [INFO] __main__ — Folder 'Shared/CHOP_WellsFargoMailCorr': 0 failed/faulted job(s)
+2026-03-06 18:04:37,495 [INFO] __main__ — Summary: 91 total jobs, 7 faulted/failed
+2026-03-06 18:04:48,044 [INFO] __main__ — Report saved → /Users/karthik/git_p/uipath/uipath_monitor/logs/report_latest.html
