@@ -6,7 +6,10 @@ import time
 from datetime import datetime, timedelta, timezone
 from typing import Any
 
+import urllib3
 import requests
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 from config import Config
 
@@ -37,7 +40,7 @@ class OrchestratorClient:
         url = f"{self._base}{path}"
 
         for attempt in range(3):
-            resp = self._session.get(url, params=params, headers=headers, timeout=30)
+            resp = self._session.get(url, params=params, headers=headers, timeout=30, verify=False)
 
             if resp.status_code == 429:
                 # Parse wait time from response message, default to 15s
