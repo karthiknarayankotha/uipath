@@ -118,6 +118,21 @@ class OrchestratorClient:
         )
         return data.get("@odata.count", 0)
 
+    def get_all_jobs(self, folder: dict) -> list[dict]:
+        """Return all jobs (any state) in the given folder for the lookback window."""
+        since = self._since_timestamp()
+        data = self._get(
+            "/odata/Jobs",
+            folder_id=folder["Id"],
+            **{
+                "$filter": f"EndTime ge {since}",
+                "$select": "Id,Key,ReleaseName,State,StartTime,EndTime,HostMachineName,Info,JobError,OrganizationUnitFullyQualifiedName",
+                "$orderby": "EndTime desc",
+                "$top": 500,
+            },
+        )
+        return data.get("value", [])
+
     def get_job_logs(self, job_key: str, folder_id: int) -> list[dict]:
         """Return the most recent error-level log entries for a job."""
         data = self._get(

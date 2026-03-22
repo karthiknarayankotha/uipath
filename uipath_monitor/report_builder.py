@@ -47,7 +47,13 @@ _HTML_STYLE = """
 """
 
 
-def build_html_report(failed_jobs: list[dict], total_count: int, cfg: Config) -> str:
+def build_html_report(
+    failed_jobs: list[dict],
+    total_count: int,
+    cfg: Config,
+    production_faulted_jobs: list[dict] | None = None,
+    production_sys_exceptions: list[dict] | None = None,
+) -> str:
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     fail_count = len(failed_jobs)
     success_count = max(total_count - fail_count, 0)
@@ -108,6 +114,88 @@ def build_html_report(failed_jobs: list[dict], total_count: int, cfg: Config) ->
                 f"<td class='{state_cls}'>{state}</td>"
                 f"<td>{error_msg}</td>"
                 f"<td><div class='logs'>{logs_html.strip() or '—'}</div></td>"
+                f"</tr>"
+            )
+        html_parts.append("</table>")
+
+    # ------------------------------------------------------------------
+    # Production — Faulted Jobs
+    # ------------------------------------------------------------------
+    html_parts.append("<hr><h2>Production &mdash; Faulted Jobs</h2>")
+    prod_faulted = production_faulted_jobs or []
+    if not prod_faulted:
+        html_parts.append("<div class='all-clear'>&#10003; No faulted jobs in Production folders.</div>")
+    else:
+        html_parts += [
+            "<table>",
+            "<tr><th>Process</th><th>Folder</th><th>Robot / Machine</th>"
+            "<th>Start</th><th>End</th><th>State</th><th>Error</th><th>Exception Logs</th></tr>",
+        ]
+        for job in prod_faulted:
+            state = job.get("State", "")
+            state_cls = f"state-{state.lower()}"
+            logs_html = ""
+            for log in job.get("logs", []):
+                ts = _fmt_dt(log.get("TimeStamp"))
+                msg = log.get("Message", "").replace("<", "&lt;").replace(">", "&gt;")
+                logs_html += f"[{ts}] {msg}\n"
+            job_error = job.get("JobError") or {}
+            raw_error = (
+                job_error.get("message")
+                or job_error.get("details")
+                or job.get("Info")
+                or "—"
+            )
+            error_msg = raw_error.replace("<", "&lt;").replace(">", "&gt;")
+            html_parts.append(
+                f"<tr>"
+                f"<td>{job.get('ReleaseName', '—')}</td>"
+                f"<td>{job.get('folder_name') or job.get('OrganizationUnitFullyQualifiedName', '—')}</td>"
+                f"<td>{job.get('HostMachineName', '—')}</td>"
+                f"<td>{_fmt_dt(job.get('StartTime'))}</td>"
+                f"<td>{_fmt_dt(job.get('EndTime'))}</td>"
+                f"<td class='{state_cls}'>{state}</td>"
+                f"<td>{error_msg}</td>"
+                f"<td><div class='logs'>{logs_html.strip() or '—'}</div></td>"
+                f"</tr>"
+            )
+        html_parts.append("</table>")
+
+    # ------------------------------------------------------------------
+    # Production — System Exceptions
+    # ------------------------------------------------------------------
+    html_parts.append("<hr><h2>Production &mdash; System Exceptions (Last {cfg.lookback_hours}h)</h2>".replace("{cfg.lookback_hours}", str(cfg.lookback_hours)))
+    prod_sys = production_sys_exceptions or []
+    if not prod_sys:
+        html_parts.append("<div class='all-clear'>&#10003; No system exceptions detected in Production folders.</div>")
+    else:
+        html_parts += [
+            "<table>",
+            "<tr><th>Process</th><th>Folder</th><th>Robot / Machine</th>"
+            "<th>Start</th><th>End</th><th>State</th><th>Exception Type</th><th>Error Message</th></tr>",
+        ]
+        for job in prod_sys:
+            state = job.get("State", "")
+            state_cls = f"state-{state.lower()}"
+            job_error = job.get("JobError") or {}
+            exc_type = (job_error.get("type") or "Unknown").replace("<", "&lt;").replace(">", "&gt;")
+            raw_error = (
+                job_error.get("message")
+                or job_error.get("details")
+                or job.get("Info")
+                or "—"
+            )
+            error_msg = raw_error.replace("<", "&lt;").replace(">", "&gt;")
+            html_parts.append(
+                f"<tr>"
+                f"<td>{job.get('ReleaseName', '—')}</td>"
+                f"<td>{job.get('folder_name') or job.get('OrganizationUnitFullyQualifiedName', '—')}</td>"
+                f"<td>{job.get('HostMachineName', '—')}</td>"
+                f"<td>{_fmt_dt(job.get('StartTime'))}</td>"
+                f"<td>{_fmt_dt(job.get('EndTime'))}</td>"
+                f"<td class='{state_cls}'>{state}</td>"
+                f"<td>{exc_type}</td>"
+                f"<td>{error_msg}</td>"
                 f"</tr>"
             )
         html_parts.append("</table>")

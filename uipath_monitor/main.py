@@ -43,6 +43,12 @@ def main() -> None:
     folders = client.get_folders()
     logger.info("Found %d folder(s)", len(folders))
 
+    production_folders = [
+        f for f in folders
+        if f.get("FullyQualifiedName", "").startswith("Production")
+    ]
+    logger.info("Found %d Production subfolder(s)", len(production_folders))
+
     failed_jobs: list[dict] = []
     total_count = 0
 
@@ -66,7 +72,29 @@ def main() -> None:
         len(failed_jobs),
     )
 
-    html = build_html_report(failed_jobs, total_count, cfg)
+    # Production-scoped: faulted jobs only
+    production_faulted_jobs = [
+        j for j in failed_jobs
+        if j.get("folder_name", "").startswith("Production")
+    ]
+
+    # Production-scoped: system exceptions from all jobs
+    production_sys_exceptions: list[dict] = []
+    for folder in production_folders:
+        folder_name = folder.get("FullyQualifiedName", str(folder["Id"]))
+        jobs = client.get_all_jobs(folder)
+        for job in jobs:
+            job_error = job.get("JobError") or {}
+            if not job_error:
+                continue
+            error_type = job_error.get("type", "")
+            if "BusinessRuleException" not in error_type:
+                job["folder_name"] = folder_name
+                production_sys_exceptions.append(job)
+    logger.info("Production system exceptions: %d", len(production_sys_exceptions))
+
+    html = build_html_report(failed_jobs, total_count, cfg,
+                             production_faulted_jobs, production_sys_exceptions)
 
     report_path = Path("logs/report_latest.html")
     report_path.write_text(html, encoding="utf-8")
